@@ -15,6 +15,7 @@ import {
   Zap,
   Building2,
   Layers,
+  GraduationCap,
 } from "lucide-react"
 
 export default function HomePage() {
@@ -41,7 +42,7 @@ export default function HomePage() {
               </div>
             </div>
             <nav className="hidden md:flex space-x-6">
-              {["Home", "About", "Services", "Branches", "Contact"].map((item, index) => (
+              {["Home", "About", "Services", "Programs", "Branches", "Contact"].map((item, index) => (
                 <a
                   key={index}
                   href={`#${item.toLowerCase()}`}
@@ -213,7 +214,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <Card className="bg-white border border-gray-100 shadow-lg relative overflow-hidden">
+          <Card className="bg-white border border-gray-100 shadow-lg relative overflow-hidden mb-16">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/30"></div>
             <CardHeader className="text-center pb-8 relative z-10">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-6 shadow-lg">
@@ -221,11 +222,12 @@ export default function HomePage() {
               </div>
               <CardTitle className="text-3xl font-black text-gray-900 mb-4">Material Testing Capabilities</CardTitle>
               <CardDescription className="text-xl text-gray-600">
-                Comprehensive testing services with state-of-the-art equipment
+                Comprehensive testing services with state-of-the-art equipment and certified procedures
               </CardDescription>
             </CardHeader>
             <CardContent className="relative z-10">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {/* Testing Services Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
                 {[
                   "Aggregates / Soil",
                   "Cement & Concrete",
@@ -243,13 +245,230 @@ export default function HomePage() {
                   </Badge>
                 ))}
               </div>
+
+              {/* Material Testing Images Gallery */}
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Testing Facilities in Action</h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    {
+                      image: "/material-test1.jpg",
+                      title: "Precision Measurement",
+                      description: "Digital caliper measurements for accurate material analysis",
+                    },
+                    {
+                      image: "/material-test2.jpg",
+                      title: "Laboratory Equipment",
+                      description: "Advanced testing apparatus for material property analysis",
+                    },
+                    {
+                      image: "/material-test4.jpg",
+                      title: "Field Testing",
+                      description: "On-site soil compaction and penetration testing",
+                    },
+                    {
+                      image: "/material-test5.jpg",
+                      title: "Tensile Strength Testing",
+                      description: "Digital tensile testing machine for material strength analysis",
+                    },
+                    {
+                      image: "/material-test6.jpg",
+                      title: "Material Preparation",
+                      description: "Sample preparation and analysis in controlled laboratory conditions",
+                    },
+                    {
+                      image: "/material-test7.jpg",
+                      title: "Concrete Test Specimens",
+                      description: "Standardized concrete cubes for strength testing with proper labeling",
+                    },
+                  ].map((test, index) => (
+                    <Card
+                      key={index}
+                      className="bg-white border border-gray-100 shadow-lg hover:shadow-blue-500/10 transition-all duration-500 group hover:-translate-y-2 relative overflow-hidden"
+                    >
+                      <div className="relative overflow-hidden rounded-t-xl">
+                        <img
+                          src={test.image || "/placeholder.svg"}
+                          alt={test.title}
+                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      <CardHeader className="pb-2">
+                        <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300 leading-tight">
+                          {test.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-gray-600 text-sm leading-relaxed">{test.description}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* Additional Testing Equipment */}
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  {
+                    image: "/material-test8.jpg",
+                    title: "Mobile Testing Unit",
+                    description: "Portable equipment for field testing and on-site analysis",
+                  },
+                  {
+                    image: "/material-test9.jpg",
+                    title: "Precision Testing",
+                    description: "Hands-on operation of digital tensile testing equipment",
+                  },
+                  {
+                    image: "/material-test3.jpg",
+                    title: "Advanced Machinery",
+                    description: "State-of-the-art testing machines for comprehensive material analysis",
+                  },
+                ].map((equipment, index) => (
+                  <Card
+                    key={index}
+                    className="bg-white border border-gray-100 shadow-lg hover:shadow-blue-500/10 transition-all duration-500 group hover:-translate-y-2 relative overflow-hidden"
+                  >
+                    <div className="relative overflow-hidden rounded-t-xl">
+                      <img
+                        src={equipment.image || "/placeholder.svg"}
+                        alt={equipment.title}
+                        className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-base font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300 leading-tight">
+                        {equipment.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 text-sm leading-relaxed">{equipment.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </CardContent>
           </Card>
         </div>
       </section>
 
+      {/* Programs Held Section */}
+      <section id="programs" className="py-24 bg-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-br from-blue-100/40 to-indigo-100/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-indigo-100/30 to-blue-100/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-xl rounded-full border border-blue-200 text-blue-700 text-sm font-medium mb-8 shadow-lg">
+              <GraduationCap className="w-4 h-4 mr-2" />
+              Educational Programs
+            </div>
+            <h2 className="text-5xl font-black bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-8">
+              Programs Held
+            </h2>
+            <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              Comprehensive training programs and workshops conducted at our state-of-the-art facilities
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                image: "/program1.jpg",
+                title: "Hands-on Mechanical Training",
+                description: "Practical training sessions on mechanical equipment and machinery operation",
+              },
+              {
+                image: "/program2.jpg",
+                title: "Engineering Seminars",
+                description: "Professional development seminars for engineers and technical professionals",
+              },
+              {
+                image: "/program3.jpg",
+                title: "Equipment Demonstrations",
+                description: "Live demonstrations of testing equipment and laboratory procedures",
+              },
+              {
+                image: "/program4.jpg",
+                title: "Technical Workshops",
+                description: "Interactive workshops covering latest engineering practices and methodologies",
+              },
+              {
+                image: "/program5.jpg",
+                title: "Industry Training Programs",
+                description: "Specialized training programs designed for industry professionals and students",
+              },
+              {
+                image: "/program6.jpg",
+                title: "Laboratory Sessions",
+                description: "Comprehensive laboratory training covering various testing and analysis procedures",
+              },
+            ].map((program, index) => (
+              <Card
+                key={index}
+                className="bg-white border border-gray-100 shadow-lg hover:shadow-blue-500/10 transition-all duration-500 group hover:-translate-y-2 relative overflow-hidden"
+              >
+                <div className="relative overflow-hidden rounded-t-xl">
+                  <img
+                    src={program.image || "/placeholder.svg"}
+                    alt={program.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300 leading-tight">
+                    {program.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 leading-relaxed">{program.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-16">
+            <Card className="bg-white border border-gray-100 shadow-lg relative overflow-hidden max-w-4xl mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/30"></div>
+              <CardHeader className="text-center pb-6 relative z-10">
+                <CardTitle className="text-3xl font-black text-gray-900 mb-4">Join Our Programs</CardTitle>
+                <CardDescription className="text-xl text-gray-600">
+                  Enhance your engineering skills with our comprehensive training programs
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="text-center relative z-10">
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  {[
+                    { icon: Users, title: "Expert Instructors", desc: "Learn from industry professionals" },
+                    { icon: Cog, title: "Modern Equipment", desc: "State-of-the-art laboratory facilities" },
+                    { icon: Award, title: "Certification", desc: "Recognized training certificates" },
+                  ].map((feature, index) => (
+                    <div key={index} className="text-center">
+                      <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl mb-4 shadow-lg">
+                        <feature.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className="font-semibold text-gray-900 mb-2">{feature.title}</h4>
+                      <p className="text-gray-600 text-sm">{feature.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <Button className="bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-400 hover:via-blue-500 hover:to-indigo-500 text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300 font-semibold text-lg group border-0">
+                  Enroll Now
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Branches Section */}
-      <section id="branches" className="py-24 bg-gray-50 relative overflow-hidden">
+      <section id="branches" className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-xl rounded-full border border-blue-200 text-blue-700 text-sm font-medium mb-8 shadow-lg">
@@ -357,7 +576,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 relative overflow-hidden bg-white">
+      <section id="contact" className="py-24 relative overflow-hidden bg-gray-50">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-br from-blue-100/40 to-indigo-100/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-indigo-100/30 to-blue-100/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
