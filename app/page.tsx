@@ -129,7 +129,7 @@ export default function HomePage() {
               About Our Company
             </div>
             <h2 className="text-5xl font-black bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-8">
-              Engineering Excellencee
+              Engineering Excellence
             </h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
