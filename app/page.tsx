@@ -75,12 +75,6 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-xl rounded-full border border-blue-200 text-blue-700 text-sm font-medium mb-8 shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group">
-              <Sparkles className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform duration-300" />
-              Engineering Excellence Since 2077
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </div>
-
             <h1 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-gray-900 via-blue-800 via-blue-700 to-indigo-800 bg-clip-text text-transparent mb-6 leading-tight">
               Butwal Engineering
               <br />
@@ -88,6 +82,26 @@ export default function HomePage() {
                 Prayogshala
               </span>
             </h1>
+
+            <div className="flex justify-center mb-8">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-indigo-600/20 rounded-3xl blur-2xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="relative bg-white/90 backdrop-blur-xl p-6 rounded-3xl border-2 border-blue-200/50 shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-500 group-hover:scale-105">
+                  <img
+                    src="/logo.png"
+                    alt="Butwal Engineering Prayogshala Logo"
+                    className="w-24 h-24 mx-auto rounded-2xl shadow-lg group-hover:shadow-blue-500/30 transition-all duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-indigo-600/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-xl rounded-full border border-blue-200 text-blue-700 text-sm font-medium mb-8 shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group">
+              <Sparkles className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+              Engineering Excellence Since 2077
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+            </div>
 
             <p className="text-xl text-gray-700 mb-4 max-w-3xl mx-auto leading-relaxed">
               Leading engineering laboratory providing{" "}
