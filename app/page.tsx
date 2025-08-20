@@ -35,9 +35,9 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"></div>
               </div>
               <div>
-                <h1 className="text-xl font-black bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 bg-clip-text text-transparent">
+                <h2 className="text-xl font-black bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 bg-clip-text text-transparent">
                   Butwal Engineering Prayogshala
-                </h1>
+                </h2>
                 <p className="text-xs text-blue-600">Pvt. Ltd.</p>
               </div>
             </div>
